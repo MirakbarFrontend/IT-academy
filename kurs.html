@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="uz">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Kurslarimiz — IT Academy</title>
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+			rel="stylesheet" />
+		<!-- CSS faylingizni ulash yoki quyidagi stilni qo'shish -->
+		<link rel="stylesheet" href="kurs.css" />
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<!-- Orqa fondagi optimallashtirilgan Canvas -->
+		<canvas id="hero-canvas"></canvas>
+
+		<!-- MODERNISED NAV -->
+		<nav class="navbar">
+			<a href="index.html" class="nav-logo">
+				<img class="logo-svg" src="img/logo IT.png" alt="IT Academy Logo" />
+				<div class="logo-wordmark">
+					<strong>IT Academy</strong>
+				</div>
+			</a>
+
+			<ul class="nav-links">
+				<li><a href="index.html" class="nav-link active">Bosh sahifa</a></li>
+				<li><a href="kurs.html" class="nav-link">Kurslar</a></li>
+				<li><a href="index.html#schedule" class="nav-link">Jadval</a></li>
+			</ul>
+
+			<a href="index.html#contact" class="nav-cta"> Ro'yxatdan o'tish <span class="arrow">→</span> </a>
+		</nav>
+
+		<!-- COURSES HERO SECTION (Search & Filter) -->
+		<section class="courses-hero">
+			<div class="inner">
+				<div class="hero-badge"><span class="badge-dot"></span> KIBER TA'LIM PLATFORMASI</div>
+				<div class="sec-div">
+					<h1 class="sec-title">Bizning <em>Kurslarimiz</em></h1>
+					<p class="sec-sub">
+						Kelajak texnologiyalari, xalqaro tillar va sun'iy intellekt darslarida professional ta'lim tizimi.
+					</p>
+				</div>
+
+				<!-- Search & Filter Controls Panel -->
+				<div class="controls-panel">
+					<div class="search-box">
+						<span class="search-icon">🔍</span>
+						<input type="text" id="course-search" placeholder="Kurs nomini kiriting (masalan: React, AI, IELTS)..." />
+					</div>
+
+					<div class="filter-tabs">
+						<button class="filter-btn active" data-filter="all">Hamma kurslar</button>
+						<button class="filter-btn" data-filter="tech">Dasturlash & Dizayn</button>
+						<button class="filter-btn" data-filter="languages">Xalqaro tillar</button>
+						<button class="filter-btn" data-filter="academic">Maktab & Siyosat</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- COURSES GRID SECTION -->
+		<section class="courses-display">
+			<div class="inner">
+				<div class="courses-grid" id="courses-container">
+					<!-- Kartochkalar JS orqali dinamik ravishda render qilinadi -->
+				</div>
+			</div>
+		</section>
+
+		<!-- PREMIUM DETAIL MODAL (Batafsil oynasi) -->
+		<div class="modal-overlay" id="course-modal">
+			<div class="modal-content">
+				<button class="modal-close" id="close-modal">&times;</button>
+				<div class="modal-header-info">
+					<span class="modal-badge" id="modal-course-cat">Kategoriya</span>
+					<h2 id="modal-course-title">Kurs Nomi</h2>
+				</div>
+				<div class="modal-body">
+					<p id="modal-course-desc">Kurs haqida to'liq ma'lumot...</p>
+					<div class="modal-features">
+						<h3>Siz nimalarni o'rganasiz?</h3>
+						<ul id="modal-course-syllabus">
+							<!-- Dinamik xususiyatlar -->
+						</ul>
+					</div>
+					<div class="modal-meta-grid">
+						<div>
+							<span class="meta-label">Davomiyligi</span>
+							<strong id="modal-course-dur">0 oy</strong>
+						</div>
+						<div>
+							<span class="meta-label">Oylik To'lov</span>
+							<strong id="modal-course-price" class="text-red">0 UZS</strong>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn-red" onclick="location.href = 'index.html#contact'">Joyni band qilish</button>
+				</div>
+			</div>
+		</div>
+		<div class="ecosystem-header">
+			<span class="ecosystem-badge">IT AKADEMIYA</span>
+
+			<h2 class="ecosystem-title">Bizning Ta'lim Yo'nalishlarimiz</h2>
+
+			<p class="ecosystem-description">
+				Zamonaviy kasblar, xorijiy tillar va akademik fanlar bo'yicha malakali ustozlar yordamida kelajagingizni bugundan quring.
+				Dasturlash, AI, dizayn va xalqaro sertifikatlarga tayyorlov kurslari bir markazda jamlangan.
+			</p>
+		</div>
+		<div class="hologram-container" id="hologram-nexus">
+			<svg class="orbital-svg-layer" id="orbital-svg"></svg>
+
+			<div class="matrix-3d-space">
+				<div class="core-engine" id="core-engine">
+					<div class="core-title">// TA'LIM EKOTIZIMI</div>
+
+					<div class="core-display-text" id="core-display">DASTURLASH</div>
+
+					<div class="core-desc" id="core-desc">Zamonaviy IT va xorijiy tillar bo'yicha professional ta'lim markazi.</div>
+				</div>
+
+				<div
+					class="orbit-node active"
+					data-tech="DASTURLASH"
+					data-desc="Frontend, Backend, Mobile ilovalar va zamonaviy dasturlash texnologiyalari.">
+					<div class="node-icon">💻</div>
+					<div class="node-name">Dasturlash</div>
+				</div>
+
+				<div class="orbit-node" data-tech="INGLIZ TILI" data-desc="IELTS va xalqaro standartdagi ingliz tili kurslari.">
+					<div class="node-icon">🇬🇧</div>
+					<div class="node-name">Ingliz Tili</div>
+				</div>
+
+				<div class="orbit-node" data-tech="MATEMATIKA" data-desc="Maktab, litsey va universitet uchun matematika kurslari.">
+					<div class="node-icon">📐</div>
+					<div class="node-name">Matematika</div>
+				</div>
+
+				<div class="orbit-node" data-tech="KOREYS TILI" data-desc="TOPIK va Koreyada ta'lim olish uchun tayyorlov.">
+					<div class="node-icon">🇰🇷</div>
+					<div class="node-name">Koreys Tili</div>
+				</div>
+
+				<div class="orbit-node" data-tech="NEMIS TILI" data-desc="Goethe sertifikati va Germaniya uchun tayyorlov.">
+					<div class="node-icon">🇩🇪</div>
+					<div class="node-name">Nemis Tili</div>
+				</div>
+
+				<div
+					class="orbit-node"
+					data-tech="KOMPYUTER SAVODXONLIGI"
+					data-desc="Kompyuter va Office dasturlarini mukammal o'rganish.">
+					<div class="node-icon">🖥️</div>
+					<div class="node-name">Kompyuter</div>
+				</div>
+
+				<div class="orbit-node" data-tech="GRAFIK DIZAYN" data-desc="Photoshop, Illustrator va Figma kurslari.">
+					<div class="node-icon">🎨</div>
+					<div class="node-name">Grafik Dizayn</div>
+				</div>
+
+				<div class="orbit-node" data-tech="PMT TAYYORLOV" data-desc="Prezident maktabiga kirish uchun maxsus tayyorlov.">
+					<div class="node-icon">🏫</div>
+					<div class="node-name">PMT</div>
+				</div>
+
+				<div class="orbit-node" data-tech="AI DARSLARI" data-desc="ChatGPT, Sun'iy Intellekt va Machine Learning kurslari.">
+					<div class="node-icon">🤖</div>
+					<div class="node-name">AI</div>
+				</div>
+			</div>
+		</div>
+		<!-- FOOTER -->
+		<footer>
+			<div class="foot-copy">&copy; 2026 IT Academy. Barcha huquqlar himoyalangan.</div>
+			<div class="foot-links">
+				<a href="#">Maxfiylik siyosati</a>
+				<a href="#">Foydalanish shartlari</a>
+			</div>
+		</footer>
+
+		<!-- JavaScript Faylini Ulash -->
+		<script src="kurs.js"></script>
+	</body>
+</html>

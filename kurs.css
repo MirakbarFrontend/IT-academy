@@ -1,0 +1,778 @@
+/* ─── IT ACADEMY GLOBAL KIBER TIZIM (MUSTAQIL STYLES) ─── */
+:root {
+	--cyber-bg: #0a0a0c;
+	--cyber-text: #f3f4f6;
+	--cyber-muted: #808090;
+	--cyber-border: rgba(255, 255, 255, 0.08);
+	--cyber-border-bright: rgba(255, 255, 255, 0.15);
+	--cyber-red: #e02020;
+	--cyber-red-glow: rgba(224, 32, 32, 0.25);
+	--cyber-red-dim: rgba(224, 32, 32, 0.1);
+}
+
+/* Canvas har doim orqada turishi shart */
+#hero-canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 1;
+	pointer-events: none;
+	background-color: var(--cyber-bg);
+}
+
+/* Sizdagi eski kod */
+#main-nav,
+.courses-hero,
+.courses-display,
+footer {
+	position: relative;
+	z-index: 10;
+}
+
+/* ─── COURSES HERO SECTION ─── */
+.courses-hero {
+	padding: 10rem 2.5rem 2rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.hero-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid var(--cyber-border);
+	padding: 6px 14px;
+	border-radius: 100px;
+	font-family: 'Space Mono', monospace;
+	font-size: 11px;
+	letter-spacing: 1px;
+	color: var(--cyber-muted);
+	margin-bottom: 1.5rem;
+}
+
+.sec-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.badge-dot {
+	width: 6px;
+	height: 6px;
+	background: var(--cyber-red);
+	border-radius: 50%;
+	box-shadow: 0 0 8px var(--cyber-red);
+}
+
+.sec-title {
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 3.5rem;
+	font-weight: 700;
+	color: var(--cyber-text);
+	margin-bottom: 1rem;
+}
+
+.sec-title em {
+	font-style: normal;
+	color: transparent;
+	-webkit-text-stroke: 1px var(--cyber-text);
+}
+
+.sec-sub {
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 1.1rem;
+	color: var(--cyber-muted);
+	max-width: 600px;
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+/* Controls Panel */
+.controls-panel {
+	width: 100%;
+	max-width: 800px;
+	background: rgba(15, 15, 20, 0.7);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border: 1px solid var(--cyber-border);
+	padding: 1.5rem;
+	border-radius: 16px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.search-box {
+	position: relative;
+	width: 100%;
+	margin-bottom: 1.25rem;
+}
+
+.search-icon {
+	position: absolute;
+	left: 18px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 16px;
+	opacity: 0.6;
+}
+
+.search-box input {
+	width: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	border: 1px solid var(--cyber-border-bright);
+	border-radius: 10px;
+	padding: 16px 16px 16px 52px;
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 15px;
+	color: var(--cyber-text);
+	outline: none;
+	box-sizing: border-box;
+	transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+	border-color: var(--cyber-red);
+	box-shadow: 0 0 20px var(--cyber-red-glow);
+}
+
+/* Filter Tabs */
+.filter-tabs {
+	display: flex;
+	gap: 10px;
+	overflow-x: auto;
+	scrollbar-width: none;
+	padding-bottom: 4px;
+}
+.filter-tabs::-webkit-scrollbar {
+	display: none;
+}
+
+.filter-btn {
+	padding: 10px 22px;
+	background: transparent;
+	border: 1px solid var(--cyber-border);
+	color: var(--cyber-muted);
+	border-radius: 8px;
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 13.5px;
+	font-weight: 500;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+	border-color: var(--cyber-border-bright);
+	color: var(--cyber-text);
+}
+
+.filter-btn.active {
+	background: var(--cyber-red);
+	border-color: var(--cyber-red);
+	color: #ffffff;
+	font-weight: 600;
+	box-shadow: 0 4px 20px var(--cyber-red-glow);
+}
+
+/* ─── COURSES GRID & PREMIUM CARD ─── */
+.courses-display {
+	padding: 0 2.5rem 8rem;
+}
+
+.courses-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+	gap: 25px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Kiber Glassmorphism Kartochka */
+.ccard {
+	background: rgba(20, 20, 25, 0.4);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid var(--cyber-border);
+	border-radius: 14px;
+	padding: 2rem;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ccard:hover {
+	transform: translateY(-5px);
+	border-color: rgba(224, 32, 32, 0.3);
+	box-shadow: 0 15px 35px rgba(224, 32, 32, 0.08);
+}
+
+.ccard-num {
+	font-family: 'Space Mono', monospace;
+	font-size: 10px;
+	color: var(--cyber-muted);
+	letter-spacing: 1px;
+	margin-bottom: 1.5rem;
+	opacity: 0.7;
+}
+
+.ccard-emoji {
+	font-size: 2.5rem;
+	margin-bottom: 1.25rem;
+	display: block;
+}
+
+.ccard h3 {
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--cyber-text);
+	margin-bottom: 0.75rem;
+}
+
+.ccard p {
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 14px;
+	color: var(--cyber-muted);
+	line-height: 1.6;
+	margin-bottom: 2rem;
+	flex-grow: 1;
+}
+
+.ccard-foot {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 1.25rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ccard-price {
+	font-family: 'Space Grotesk', sans-serif;
+	font-weight: 700;
+	color: var(--cyber-text);
+}
+
+.ccard-dur {
+	font-family: 'Space Mono', monospace;
+	font-size: 12px;
+	color: var(--cyber-muted);
+}
+
+.ccard-actions {
+	display: flex;
+	gap: 10px;
+	margin-top: 1.5rem;
+}
+
+.ccard-actions button,
+.btn-red {
+	flex: 1;
+	padding: 12px;
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	border-radius: 8px;
+	cursor: pointer;
+	border: none;
+	transition: all 0.2s ease;
+}
+
+.btn-card-more {
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid var(--cyber-border-bright) !important;
+	color: var(--cyber-text);
+}
+.btn-card-more:hover {
+	background: rgba(255, 255, 255, 0.1);
+	border-color: var(--cyber-text) !important;
+}
+
+.btn-red {
+	background: var(--cyber-red);
+	color: #fff;
+	box-shadow: 0 4px 12px var(--cyber-red-glow);
+}
+.btn-red:hover {
+	background: #ff2a2a;
+	box-shadow: 0 6px 20px rgba(224, 32, 32, 0.4);
+}
+
+/* ─── MODAL OYNA TIZIMI ─── */
+.modal-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.85);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	z-index: 2000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease;
+}
+
+.modal-overlay.open {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.modal-content {
+	background: #0d0d11;
+	border: 1px solid rgba(224, 32, 32, 0.3);
+	box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+	width: 100%;
+	max-width: 500px;
+	margin-top: 80px;
+	border-radius: 16px;
+	padding: 2.5rem;
+	position: relative;
+	transform: scale(0.92);
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay.open .modal-content {
+	transform: scale(1);
+}
+
+.modal-close {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	background: transparent;
+	border: none;
+	color: var(--cyber-muted);
+	font-size: 32px;
+	cursor: pointer;
+	line-height: 0.5;
+}
+.modal-close:hover {
+	color: #fff;
+}
+
+.modal-header-info {
+	margin-bottom: 1.5rem;
+}
+.modal-badge {
+	font-family: 'Space Mono', monospace;
+	font-size: 9px;
+	color: #ff3a3a;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	background: var(--cyber-red-dim);
+	padding: 4px 10px;
+	border-radius: 4px;
+	border: 1px solid rgba(224, 32, 32, 0.2);
+}
+
+#modal-course-title {
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 26px;
+	color: var(--cyber-text);
+	margin-top: 1rem;
+}
+
+#modal-course-desc {
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 14.5px;
+	color: var(--cyber-muted);
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+}
+
+.modal-features h3 {
+	font-family: 'Space Mono', monospace;
+	font-size: 13px;
+	color: var(--cyber-muted);
+	text-transform: uppercase;
+	margin-bottom: 0.75rem;
+}
+
+.modal-features ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 2rem 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.modal-features ul li {
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 14px;
+	color: var(--cyber-text);
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.modal-features ul li::before {
+	content: '✓';
+	color: var(--cyber-red);
+	font-weight: bold;
+}
+
+.modal-meta-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--cyber-border);
+	margin-bottom: 2rem;
+}
+
+.meta-label {
+	display: block;
+	font-family: 'Space Mono', monospace;
+	font-size: 10px;
+	color: var(--cyber-muted);
+	text-transform: uppercase;
+}
+
+.modal-meta-grid strong {
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 18px;
+	color: var(--cyber-text);
+}
+.text-red {
+	color: #ff3a3a !important;
+}
+
+/* Skroll vaqtida unumdorlikni oshirish */
+.scrolling #hero-canvas {
+	opacity: 0.3;
+} /* ─── NAVBARRNI CANVAS USTIGA CHIQARISH VA FIXED QILISH ─── */
+.navbar {
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 99999 !important; /* Barcha kontent va modal oynalardan tepada turishi uchun */
+	background: rgba(10, 10, 12, 0.85) !important; /* Orqa fon biroz shaffof kiber uslubda */
+	backdrop-filter: blur(12px) !important; /* Orqasidagi canvas nuqtalari mayin ko'rinib turadi */
+	-webkit-backdrop-filter: blur(12px) !important;
+}
+
+.courses-hero,
+.courses-display,
+footer {
+	position: relative;
+	z-index: 10;
+}
+/* ======================================================= */
+/* CYBER GLOBAL STYLES & DESIGN TOKENS                     */
+/* ======================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+	--bg-main: #08080c;
+	--cyber-red: #e02020;
+	--cyber-red-glow: rgba(224, 32, 32, 0.5);
+	--cyber-grid:
+		linear-gradient(rgba(224, 32, 32, 0.03) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(224, 32, 32, 0.03) 1px, transparent 1px);
+	--font-display: 'Orbitron', 'Syncopate', sans-serif;
+	--font-mono: 'Space Mono', 'Fira Code', monospace;
+}
+
+.cyber-wrapper {
+	background-color: var(--bg-main);
+	background-image: var(--cyber-grid);
+	background-size: 40px 40px;
+	color: #ffffff;
+	font-family: var(--font-display);
+	padding: 80px 20px;
+	overflow: hidden;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.cyber-wrapper *,
+.cyber-wrapper *::before,
+.cyber-wrapper *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.section-title {
+	text-align: center;
+	font-size: 2.5rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	margin-bottom: 60px;
+	color: #fff;
+	text-shadow: 0 0 10px var(--cyber-red-glow);
+	position: relative;
+}
+
+.section-title::after {
+	content: '';
+	display: block;
+	width: 60px;
+	height: 4px;
+	background: var(--cyber-red);
+	margin: 15px auto 0 auto;
+	box-shadow: 0 0 8px var(--cyber-red);
+}
+
+/* ======================================================= */
+/* MODULE: HOLOGRAM NEXUS COMPACT STYLES                   */
+/* ======================================================= */
+.hologram-container {
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	height: 600px;
+	margin: 0 auto;
+	perspective: 1200px;
+	margin-bottom: 90px;
+}
+
+.orbital-svg-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.orbital-vector {
+	stroke: rgba(224, 32, 32, 0.18);
+	stroke-width: 1.2;
+	fill: none;
+	stroke-dasharray: 6 4;
+	animation: vectorPulse 3s linear infinite;
+}
+
+@keyframes vectorPulse {
+	to {
+		stroke-dashoffset: -20;
+	}
+}
+
+.matrix-3d-space {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+}
+
+/* Core Display Node - Mutloq Markazlashtirilgan Dumaloq */
+.core-engine {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); /* Toza matematik geometrik o'rta */
+	width: 300px;
+	height: 300px;
+	background: radial-gradient(circle, rgba(224, 32, 32, 0.15) 0%, rgba(8, 8, 12, 0.9) 80%);
+	backdrop-filter: blur(25px);
+	-webkit-backdrop-filter: blur(25px);
+	border: 2px solid var(--cyber-red);
+	border-radius: 50%;
+	box-shadow:
+		0 0 35px rgba(224, 32, 32, 0.25),
+		inset 0 0 20px rgba(224, 32, 32, 0.15);
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 25px;
+	text-align: center;
+	transform-style: preserve-3d;
+	transition: transform 0.4s ease-out;
+}
+.core-engine {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 320px;
+	height: 320px;
+	border-radius: 50%;
+	z-index: 20;
+}
+.core-engine::before {
+	content: '';
+	position: absolute;
+	top: -8px;
+	left: -8px;
+	right: -8px;
+	bottom: -8px;
+	border: 1px dashed rgba(224, 32, 32, 0.3);
+	border-radius: 50%;
+	animation: rotateClockwise 25s linear infinite;
+}
+
+@keyframes rotateClockwise {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.core-title {
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #777;
+	margin-bottom: 8px;
+}
+
+.core-display-text {
+	font-size: 1.4rem;
+	font-weight: 900;
+	color: #ffffff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-shadow: 0 0 10px var(--cyber-red-glow);
+	min-height: 38px;
+}
+
+.core-desc {
+	font-size: 0.75rem;
+	font-family: var(--font-mono);
+	color: rgba(255, 255, 255, 0.7);
+	margin-top: 12px;
+	line-height: 1.4;
+	max-width: 230px;
+}
+
+/* Satellit bloklari */
+
+.orbit-node {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	background: rgba(12, 12, 20, 0.93);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border: 1px solid rgba(224, 32, 32, 0.25);
+	border-radius: 14px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 5;
+	transition:
+		border-color 0.4s,
+		box-shadow 0.4s,
+		background 0.4s;
+	will-change: transform;
+	padding: 12px;
+	text-align: center;
+	top: 0;
+	left: 0;
+}
+
+.orbit-node:hover,
+.orbit-node.active {
+	border-color: var(--cyber-red);
+	box-shadow:
+		0 0 20px var(--cyber-red-glow),
+		inset 0 0 10px rgba(224, 32, 32, 0.2);
+	background: rgba(224, 32, 32, 0.08);
+}
+
+.orbit-node .node-icon {
+	font-size: 1.8rem;
+	margin-bottom: 6px;
+	transition: transform 0.3s ease;
+}
+
+.orbit-node:hover .node-icon {
+	transform: scale(1.1) translateZ(10px);
+}
+
+.orbit-node .node-name {
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #d0d0d0;
+}
+
+/* Neon Laser Sweep Line */
+.orbit-node.active::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background: linear-gradient(90deg, transparent, var(--cyber-red), transparent);
+	box-shadow: 0 0 8px var(--cyber-red);
+	animation: laserSweep 2s linear infinite;
+}
+
+@keyframes laserSweep {
+	0% {
+		top: 0%;
+		opacity: 0;
+	}
+	5% {
+		opacity: 1;
+	}
+	95% {
+		opacity: 1;
+	}
+	100% {
+		top: 100%;
+		opacity: 0;
+	}
+}
+
+.ecosystem-header {
+	max-width: 900px;
+	margin: 0 auto 70px;
+	text-align: center;
+}
+
+.ecosystem-badge {
+	display: inline-block;
+	padding: 10px 22px;
+	border: 1px solid rgba(224, 32, 32, 0.4);
+	border-radius: 50px;
+	color: #e02020;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	background: rgba(224, 32, 32, 0.08);
+	margin-bottom: 20px;
+}
+
+.ecosystem-title {
+	font-size: 48px;
+	font-weight: 900;
+	line-height: 1.2;
+	color: #fff;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.ecosystem-title span {
+	color: #e02020;
+}
+
+.ecosystem-description {
+	max-width: 750px;
+	margin: 0 auto;
+	font-size: 18px;
+	line-height: 1.8;
+	color: rgba(255, 255, 255, 0.75);
+}
