@@ -10,18 +10,6 @@
 	--cyber-red-dim: rgba(224, 32, 32, 0.1);
 }
 
-/* Canvas har doim orqada turishi shart */
-#hero-canvas {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	z-index: 1;
-	pointer-events: none;
-	background-color: var(--cyber-bg);
-}
-
 /* Sizdagi eski kod */
 #main-nav,
 .courses-hero,
@@ -443,11 +431,6 @@ footer {
 .text-red {
 	color: #ff3a3a !important;
 }
-
-/* Skroll vaqtida unumdorlikni oshirish */
-.scrolling #hero-canvas {
-	opacity: 0.3;
-} /* ─── NAVBARRNI CANVAS USTIGA CHIQARISH VA FIXED QILISH ─── */
 .navbar {
 	position: fixed !important;
 	top: 0;

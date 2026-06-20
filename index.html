@@ -10,6 +10,8 @@
 			rel="stylesheet" />
 
 		<link rel="stylesheet" href="styles.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.net.min.js"></script>
 	</head>
 	<body>
 		<nav class="navbar">
@@ -29,7 +31,7 @@
 			<a href="#contact" class="nav-cta"> Ro'yxatdan o'tish <span class="arrow">→</span> </a>
 		</nav>
 		<div class="hero">
-			<canvas id="hero-canvas"></canvas>
+			<div id="vanta-net-bg" style="width: 100%; height: 100vh; position: absolute; z-index: 1"></div>
 			<div class="hero-badge">
 				<div class="badge-dot"></div>
 				Andijonning yetakchi IT ta'lim markazi
@@ -871,5 +873,22 @@
 		</footer>
 
 		<script src="main.js"></script>
+		<script>
+			VANTA.NET({
+				el: '#vanta-net-bg',
+				mouseControls: true,
+				touchControls: true,
+				gyroControls: false,
+				minHeight: 200.0,
+				minWidth: 200.0,
+				scale: 1.0,
+				scaleMobile: 1.0,
+				color: 0xff2200, // chiziqlar/nuqtalar rangi — qizil
+				backgroundColor: 0x0d0d0d, // fon rangi — chuqur qora
+				points: 10.0, // nuqtalar soni
+				maxDistance: 20.0, // nuqtalar orasidagi masofa
+				spacing: 16.0, // nuqtalar joylashishi
+			});
+		</script>
 	</body>
 </html>
